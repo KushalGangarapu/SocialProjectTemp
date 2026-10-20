@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'EVIDENCE 1',
       date: 'POST-OP SQUINT SURGERY // AGE 3-4',
       title: 'Evidence 1: Eye Surgery Recovery Photo',
-      text: 'Primary artifact documenting temporary physical impairment and sensory loss. Following strabismus surgery, visual acuity was severely compromised for about seven days, requiring dark environments and physical guidance to navigate basic domestic spaces.',
+      text: 'Photo documenting temporary physical impairment and sensory loss. Following strabismus surgery, visibility was severely compromised for about seven days, requiring dark environments and physical guidance to navigate basic domestic spaces.',
       significance: 'Tangible record of childhood physical vulnerability, temporary sensory impairment, and the baseline reality of total reliance on caregivers.'
     },
     'ability-care-log': {
