@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'EVIDENCE 2',
       date: 'FAMILY PHOTO // DUAL REALITY',
       title: 'Evidence 2: Family Support & The Internal Burden',
-      text: 'Visual record of the family care network. It represents both the physical interdependence necessary to go through childhood medical recovery, and the socio-economic context of a single-income immigrant household where silent, self-imposed psychological pressures develop.',
+      text: 'Visual record of the family care network. It represents both the physical interdependence necessary to go through childhood medical recovery, and the socio-economic context of a single-income immigrant household where silent, self-imposed psychological pressures and the desire to validate family sacrifices develop.',
       significance: 'Clearly separates physical caregiving from the completely separate, internalized mental stress carried in a single-income household.'
     },
     'age-license-rec': {
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
       vector: 'PHYSICAL CARE & SEPARATE INTERNAL STRESS',
       scholar: 'PHYSICAL CARE & INVISIBLE MENTAL BURDEN',
       title: 'SES × Ability: Physical Caregiving vs. The Separate Mental Burden of a Single-Income Home',
-      lived: 'Recovering from my squint surgery at age 3 to 4 required intense physical care from my parents: being spoon-fed, guided by the forearm, and shielded from light. Yet the lasting stress I experienced was completely separate: the quiet, invisible mental burden of living in a single-income household, feeling guilty asking for anything, and self-censoring my needs to protect my parents.',
+      lived: 'Recovering from my squint surgery at age 3 to 4 required intense physical care from my parents: being spoon-fed, guided by the forearm, and shielded from light. Yet the lasting stress I experienced was completely separate: the quiet, invisible mental burden of living in a single-income household, feeling guilty asking for anything, self-censoring my needs to protect my parents, and pushing myself to succeed in school to validate their sacrifices.',
       systemic: 'In our class Access and Equity units, we analyzed how ability includes both physical health and mental bandwidth. In a single-income immigrant family, parents absorb the physical toll of recovery without outside help, while children quietly internalize the economic stress, demonstrating that both physical and mental well-being are deeply tied to socioeconomic stability.',
       defense: '"True care means understanding that physical recovery requires a helping hand, while mental well-being requires relieving invisible financial stress."'
     },
