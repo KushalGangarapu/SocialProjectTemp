@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       date: 'Post-Operative Recovery (Age 3-4)',
       title: 'Childhood Eye Surgery & Week of Temporary Blindness',
       text: 'Photograph documenting recovery following squint surgery at age 3-4. In the photograph, I am sitting upright with dark protective wrap-around glasses on after undergoing eye surgery to correct my squint. The post-surgery period was not total blindness, but a week of severe vision blur and light sensitivity.',
-      significance: 'Tangible record of childhood vulnerability, temporary sensory impairment, and visceral reliance on caregivers.'
+      significance: 'Tangible record of childhood vulnerability, temporary sensory impairment, and reliance on parents.'
     },
     'ability-care-log': {
       id: 'EVIDENCE 2',
