@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       date: 'December 30, 2024 (Age 15)',
       title: 'Me at Various Temples: Tirupati Pilgrimage & Family Solidarity',
       text: 'Authentic photograph taken on December 30, 2024, showing 15-year-old Kushal dressed in a traditional dhoti (veshti) standing with his parents outside the sacred Tirumala Tirupati temple. While my personal stance is as close to an atheist as one can get while remaining culturally Hindu, I proudly wear traditional attire and participate in temple pilgrimages out of love for my parents.',
-      significance: 'Visual evidence of finding the fine point where religion and logic coexist: participating in sacred rituals as an emotional language of family care rather than theological dogma.'
+      significance: 'Visual evidence of finding the fine point where religion and logic coexist: participating in sacred rituals as an emotional language of family care rather than strict religious rules.'
     },
     'lang-primer': {
       id: 'EVIDENCE 1',
