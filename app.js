@@ -1,8 +1,8 @@
 /**
  * Seeing Myself: A Social Identity Inquiry | Exhibition Interactive Engine
  * Curated for Social Justice 12 (Kushal)
- * Features: Web Audio API Synthesizer & Live Waveform Canvas, Dynamic Intersectional Matrix,
- * Interactive Artifact Controllers, and Provenance Dialog Modal.
+ * Features: Dynamic Intersectional Matrix, Interactive Artifact Controllers,
+ * Provenance Dialog Modal, and Reading Progress Tracker.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'EVIDENCE 1',
       date: 'Grade 8 (Origin) & 2024 (Build)',
       title: 'Custom PC Workstation (Core i7-13700K & RTX 4070 SUPER)',
-      text: 'Personal photo sitting with component boxes for my custom workstation (Kushal_Desktop). My passion began in Grade 8 leading to a year of asking my parents while watching PC-building and hardware benchmark videos. When peers see the completed 2024 build, they assume I am \\"rich as hell,\\" but the money spent hides the surface appearance.',
+      text: 'Personal photo sitting with component boxes for my custom workstation (Kushal_Desktop). My passion began in Grade 8 leading to a year of asking my parents while watching PC-building and hardware benchmark videos. When peers see the completed 2024 build, they assume I am "rich as hell," but the money spent hides the surface appearance.',
       significance: 'How high-performance technology projects an illusion of being rich as hell, completely detaching the object from the parental labor and single-income financial stretch that funded it.'
     },
     'ses-overtime': {
       id: 'EVIDENCE 2',
-      date: 'Procurement Audit 2024',
-      title: 'Task Manager Specifications & Parental Sacrifice',
-      text: 'Windows 11 Device Specifications readout for Kushal_Desktop (Intel Core i7-13700K, 32GB RAM, RTX 4070 SUPER). After over a year of asking, my parents finally said \\"screw it\\" and bought the parts hoping buying the PC would end my obsession with build videos but they were wrong. Even with weeks spent trying to cut costs, high-tier hardware is a massive financial burden on a single-income household.',
+      date: 'SYSTEM SPECS // 2024',
+      title: 'Evidence 2: Windows System Specifications',
+      text: 'Windows 11 Device Specifications readout for Kushal_Desktop (Intel Core i7-13700K, 32GB RAM, RTX 4070 SUPER). After over a year of asking, my parents finally said "screw it" and bought the parts, hoping buying the PC would end my obsession with build videos, but they couldn\'t have been more wrong. Even with weeks spent trying to cut costs, high-tier hardware remains a heavy financial burden on a single-income household.',
       significance: 'Finished technology often masks the economic strain absorbed by working-class immigrant parents to support a child\'s aspirations.'
     },
     'rel-pilgrimage': {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'EVIDENCE 1',
       date: 'Elementary School (Chennai, Tamil Nadu)',
       title: 'Old Textbooks: Tamil Schooling & Learning Different Languages',
-      text: 'Photograph of my Standard 4 Tamil textbooks (\\"தமிழ்\\" and \\"தமிழ் இலக்கணம்\\" - Tamil literature and grammar) from my schooling in Chennai, Tamil Nadu. While my family has ancestral roots in Andhra Pradesh and speak Telugu at home, we lived in Chennai where I studied Tamil in school. These books represent the multilingual reality of my South Indian upbringing before moving to Canada.',
+      text: 'Photograph of my Standard 4 Tamil textbooks ("தமிழ்" and "தமிழ் இலக்கணம்" - Tamil literature and grammar) from my schooling in Chennai, Tamil Nadu. While my family has ancestral roots in Andhra Pradesh and speak Telugu at home, we lived in Chennai where I studied Tamil in school. These books represent the multilingual reality of my South Indian upbringing before moving to Canada.',
       significance: 'Preserving our native Telugu mother tongue daily at home while highlighting multilingual schooling in Chennai before immigrating to Canada.'
     },
     'lang-cbsa-rec': {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'EVIDENCE 1',
       date: 'Province of BC: Class 7L Driver\'s Licence',
       title: 'Driver\'s Licence & Institutional Proof of Maturity',
-      text: 'Personal photograph of my authentic BC Class 7L Driver\'s Licence from ICBC. In Canadian society, turning 16 and passing the driver\'s knowledge test is seen as a significant milestone where friends express celebration and society expects teens to be \\"magically mature.\\" However, bureaucratic cards do not deliver wisdom; they merely give the freedom to drive with parental supervision.',
+      text: 'Personal photograph of my authentic BC Class 7L Driver\'s Licence from ICBC. In Canadian society, turning 16 and passing the driver\'s knowledge test is seen as a significant milestone where friends express celebration and society expects teens to be "magically mature." However, bureaucratic cards do not deliver wisdom; they merely give the freedom to drive with parental supervision.',
       significance: 'How society and institutions use arbitrary age cutoffs like 16 or Grade 12 to assume maturity overnight.'
     },
     'age-transit-rec': {
@@ -98,185 +98,116 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // =========================================================================
   // 2. CHAPTER 2: INTERACTIVE FAITH LENS TOGGLE
-
   // =========================================================================
 
   const lensTabs = document.querySelectorAll('.lens-tab');
-
   const lensExplanation = document.getElementById('lens-explanation');
 
   lensTabs.forEach(tab => {
-
     tab.addEventListener('click', () => {
-
       lensTabs.forEach(t => t.classList.remove('active'));
-
       tab.classList.add('active');
 
       const lens = tab.getAttribute('data-lens');
-
       if (lensExplanation) {
-
         if (lens === 'faith') {
-
           lensExplanation.innerHTML = `<strong>Family Tradition:</strong> Rituals like temple ceremonies are an important part of our culture, family history, and community support.`;
-
         } else {
-
           lensExplanation.innerHTML = `<strong>Personal Skepticism:</strong> Close to atheist while culturally remaining Hindu. Participating in rituals out of love and solidarity for family beliefs rather than theological dogma.`;
-
         }
-
       }
-
     });
-
   });
 
   // =========================================================================
-
   // 3. CHAPTER 4: SQUINT SURGERY BLUR SIMULATOR
-
   // =========================================================================
 
   const btnToggleOcclusion = document.getElementById('btn-toggle-occlusion');
-
   const eyeSurgeryCanvas = document.getElementById('eye-surgery-canvas');
-
   const occlusionBtnText = document.getElementById('occlusion-btn-text');
 
   if (btnToggleOcclusion && eyeSurgeryCanvas) {
-
     btnToggleOcclusion.addEventListener('click', () => {
-
       const isOccluded = eyeSurgeryCanvas.classList.toggle('occluded');
-
       btnToggleOcclusion.setAttribute('aria-pressed', isOccluded ? 'true' : 'false');
 
       if (isOccluded) {
-
         if (occlusionBtnText) occlusionBtnText.textContent = 'Restore Clear Vision';
-
         btnToggleOcclusion.style.backgroundColor = '#9c381e';
-
       } else {
-
         if (occlusionBtnText) occlusionBtnText.textContent = 'Simulate Post-Op Squint Blur & Sensitivity';
-
         btnToggleOcclusion.style.backgroundColor = '#111111';
-
       }
-
     });
-
   }
 
   // =========================================================================
-
   // 4. CHAPTER 5: AGE AUTONOMY PARADOX AUDIT
-
   // =========================================================================
 
   const paradoxBtns = document.querySelectorAll('.paradox-btn');
-
   const paradoxTextBox = document.getElementById('paradox-text-box');
 
   paradoxBtns.forEach(btn => {
-
     btn.addEventListener('click', () => {
-
       paradoxBtns.forEach(b => b.classList.remove('active'));
-
       btn.classList.add('active');
 
       const side = btn.getAttribute('data-side');
-
       if (paradoxTextBox) {
-
         if (side === 'state') {
-
           paradoxTextBox.innerHTML = `<strong>Society's View (16 &amp; Driver's License):</strong> Society and peers treat turning 16 and passing the Class 7L permit as a magical threshold, suddenly expecting adult responsibility overnight.`;
-
         } else {
-
           paradoxTextBox.innerHTML = `<strong>Domestic Incremental Change (Family):</strong> Maturity was a slow, continuous change: as I grew older, my parents felt comfortable sharing our real struggles, such as being unable to buy a house after 8 years in Canada on a single income. <em>"Well, I'm an adult if the situation we're talking about needs me to be an adult, and a child otherwise."</em>`;
-
         }
-
       }
-
     });
-
   });
 
   // =========================================================================
-
   // 5. CHAPTER 6: GENDER EXPECTATIONS LENS
-
   // =========================================================================
 
   const btnTogglePerformativity = document.getElementById('btn-toggle-performativity');
-
   const performativityNote = document.getElementById('performativity-note');
 
   if (btnTogglePerformativity && performativityNote) {
-
     let lensActive = false;
 
     btnTogglePerformativity.addEventListener('click', () => {
-
       lensActive = !lensActive;
-
       btnTogglePerformativity.setAttribute('aria-pressed', lensActive ? 'true' : 'false');
 
       if (lensActive) {
-
         btnTogglePerformativity.textContent = 'Show Childhood Frock Reality';
-
         btnTogglePerformativity.style.backgroundColor = '#9c381e';
-
         performativityNote.innerHTML = '"Gender Expectations Analysis: Society conditions young boys to perform rigid masculinity under peer pressure, whereas wearing comfortable hoodies and focusing on character rejects those restrictive stereotypes."';
-
         performativityNote.style.color = '#9c381e';
-
       } else {
-
         btnTogglePerformativity.textContent = 'Apply Gender Expectations Analysis Lens';
-
         btnTogglePerformativity.style.backgroundColor = '#111111';
-
         performativityNote.innerHTML = '"Childhood Reality: At age 2-3, clothes were passed down out of practical domestic frugality. Toddlers do not police gender boundaries; clothing is purely functional and comfortable."';
-
         performativityNote.style.color = '#1e3656';
-
       }
-
     });
-
   }
 
   // =========================================================================
-
   // 6. INTERSECTIONALITY LABORATORY & DYNAMIC MATRIX
-
   // =========================================================================
 
   const selectPrimary = document.getElementById('matrix-primary');
-
   const selectSecondary = document.getElementById('matrix-secondary');
-
   const synthesisVector = document.getElementById('synthesis-vector');
-
   const synthesisScholar = document.getElementById('synthesis-scholar');
-
   const synthesisTitle = document.getElementById('synthesis-title');
-
   const synthesisLived = document.getElementById('synthesis-lived');
-
   const synthesisSystemic = document.getElementById('synthesis-systemic');
-
   const synthesisDefense = document.getElementById('synthesis-defense');
+
   const INTERSECTION_DATA = {
     'ses-age': {
       vector: 'ECONOMIC SACRIFICE & FAMILY TRANSPARENCY',
@@ -397,18 +328,16 @@ document.addEventListener('DOMContentLoaded', () => {
       lived: 'At age 2-3, I wore my older female cousin\'s hand-me-down black-and-cream patterned collared frock with pocket ribbons purely for practical domestic frugality, yet relatives still tease me affectionately about it. Today, I dress in casual hoodies and focus on who I am rather than performing male stereotypes. My school and home environments have allowed me to be whatever I want without feeling pressured by gender expectations.',
       systemic: 'As we discussed in our class units on Nurture (learned behaviour) and the Cycle of Oppression, gender stereotypes are taught by society as we grow older rather than being natural. Having supportive home and school environments allows young people to reject restrictive male stereotypes and live authentically.',
       defense: '"From a cousin\'s dress at age two to hoodies at seventeen, who you are matters more than fitting into gender boxes."'
-    },
+    }
   };
 
   function updateIntersectionOutput() {
-
     if (!selectPrimary || !selectSecondary) return;
 
     const p = selectPrimary.value;
-
     const s = selectSecondary.value;
 
-        if (p === s) {
+    if (p === s) {
       if (synthesisTitle) synthesisTitle.textContent = 'Please choose two different identity categories to investigate their intersections.';
       if (synthesisVector) synthesisVector.textContent = 'CHOOSE TWO DIFFERENT IDENTITIES';
       if (synthesisScholar) synthesisScholar.textContent = 'INTERSECTION INQUIRY';
@@ -419,218 +348,130 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const key = `${p}-${s}`;
-
     const reverseKey = `${s}-${p}`;
 
     const data = INTERSECTION_DATA[key] || INTERSECTION_DATA[reverseKey] || {
-
       vector: 'INTERSECTING IDENTITIES',
-
       scholar: 'INTERSECTIONALITY & CONNECTED IDENTITIES',
-
       title: `${selectPrimary.options[selectPrimary.selectedIndex].text} × ${selectSecondary.options[selectSecondary.selectedIndex].text}`,
-
       lived: 'These two lived identities connect in daily life, showing how outward perception in one category interacts with lived experience in another.',
-
       systemic: 'Social power structures do not operate in silos; institutions and cultural norms affect individuals across multiple aspects of identity simultaneously.',
-
       defense: '"True social justice inquiry demands examining how these intersecting forces simultaneously grant advantage while demanding social conformity."'
-
     };
 
     if (synthesisVector) synthesisVector.textContent = `INTERSECTION FOCUS: ${data.vector}`;
-
     if (synthesisScholar) synthesisScholar.textContent = `KEY THEME: ${data.scholar}`;
-
     if (synthesisTitle) synthesisTitle.textContent = data.title;
-
     if (synthesisLived) synthesisLived.textContent = data.lived;
-
     if (synthesisSystemic) synthesisSystemic.textContent = data.systemic;
-
     if (synthesisDefense) synthesisDefense.textContent = data.defense;
-
   }
 
   if (selectPrimary && selectSecondary) {
-
     selectPrimary.addEventListener('change', updateIntersectionOutput);
     selectSecondary.addEventListener('change', updateIntersectionOutput);
     updateIntersectionOutput();
-
   }
 
   // =========================================================================
-
-  // 10. ACCESSIBLE ARCHIVAL PROVENANCE DIALOG MODAL
-
+  // 7. ACCESSIBLE ARCHIVAL PROVENANCE DIALOG MODAL
   // =========================================================================
 
   const dialog = document.getElementById('provenance-dialog');
-
   const dialogCloseBtn = document.getElementById('dialog-close-btn');
-
   const dialogDismissBtn = document.getElementById('dialog-dismiss-btn');
-
   const dialogAccessionId = document.getElementById('dialog-accession-id');
-
   const dialogAccessionDate = document.getElementById('dialog-accession-date');
-
   const dialogEvidenceTitle = document.getElementById('dialog-evidence-title');
-
   const dialogEvidenceText = document.getElementById('dialog-evidence-text');
-
   const dialogRubricNote = document.getElementById('dialog-rubric-note');
 
   document.querySelectorAll('.inspect-record-btn').forEach(btn => {
-
     btn.addEventListener('click', () => {
-
       const recordKey = btn.getAttribute('data-record');
-
       const record = PROVENANCE_ARCHIVE[recordKey];
 
       if (record && dialog) {
-
-        dialogAccessionId.textContent = record.id;
-
-        dialogAccessionDate.textContent = record.date;
-
+        if (dialogAccessionId) dialogAccessionId.textContent = record.id;
+        if (dialogAccessionDate) dialogAccessionDate.textContent = record.date;
         if (dialogEvidenceTitle) dialogEvidenceTitle.textContent = record.title;
-
         if (dialogEvidenceText) dialogEvidenceText.textContent = record.text;
-
-        dialogRubricNote.textContent = record.significance || record.rubric;
+        if (dialogRubricNote) dialogRubricNote.textContent = record.significance || record.rubric;
 
         if (typeof dialog.showModal === 'function') {
-
           dialog.showModal();
-
         } else {
-
           dialog.setAttribute('open', '');
-
         }
-
       }
-
     });
-
   });
 
   function closeProvenanceDialog() {
-
     if (dialog) {
-
       if (typeof dialog.close === 'function') {
-
         dialog.close();
-
       } else {
-
         dialog.removeAttribute('open');
-
       }
-
     }
-
   }
 
   if (dialogCloseBtn) dialogCloseBtn.addEventListener('click', closeProvenanceDialog);
-
   if (dialogDismissBtn) dialogDismissBtn.addEventListener('click', closeProvenanceDialog);
 
-  // Click outside dialog to dismiss
-
+  // Click outside dialog backdrop to dismiss
   if (dialog) {
-
     dialog.addEventListener('click', (e) => {
-
       const rect = dialog.getBoundingClientRect();
-
       const inDialog = (
-
         rect.top <= e.clientY &&
-
         e.clientY <= rect.top + rect.height &&
-
         rect.left <= e.clientX &&
-
         e.clientX <= rect.left + rect.width
-
       );
 
       if (!inDialog) {
-
         closeProvenanceDialog();
-
       }
-
     });
-
   }
 
   // =========================================================================
-
-  // 11. READING PROGRESS TRACKER & QUICK NAV HIGHLIGHTER
-
+  // 8. READING PROGRESS TRACKER & QUICK NAV HIGHLIGHTER
   // =========================================================================
 
   const progressBar = document.getElementById('progress-bar');
-
   const sections = document.querySelectorAll('section.chapter-stage, article.prologue-canvas');
-
   const navPills = document.querySelectorAll('.pill-link');
 
   window.addEventListener('scroll', () => {
-
     // 1. Reading progress bar
-
     const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
     const scrolled = (winScroll / height) * 100;
 
     if (progressBar) {
-
       progressBar.style.width = `${scrolled}%`;
-
     }
 
     // 2. Active nav link highlight
-
     let currentId = '';
-
     sections.forEach(sec => {
-
       const top = sec.offsetTop - 120;
-
       if (winScroll >= top) {
-
         currentId = sec.getAttribute('id');
-
       }
-
     });
 
     navPills.forEach(pill => {
-
       const target = pill.getAttribute('href').replace('#', '');
-
       if (target === currentId) {
-
         pill.classList.add('active');
-
       } else {
-
         pill.classList.remove('active');
-
       }
-
     });
-
   }, { passive: true });
 
 });
-
