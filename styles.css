@@ -1,0 +1,3298 @@
+/* ==========================================================================
+
+   SEEING MYSELF: A SOCIAL IDENTITY INQUIRY
+
+   Fine-Press Monograph & Interactive Critical Exhibition for Social Justice 12
+
+   Art Direction: Archival Cotton Rag Paper, Velvet Carbon Ink, Terracotta & Indigo
+
+   Zero AI Slop: Individual Bespoke Topologies, Tactile Realism, Zero Clichés
+
+   ========================================================================== */
+
+/* 1. DESIGN TOKENS */
+
+:root {
+
+  /* Cotton Paper & Carbon Ink Palette */
+
+  --bg-paper: #f7f4ed;
+
+  --bg-surface: #ffffff;
+
+  --bg-surface-warm: #f1ece1;
+
+  --bg-dark-slate: #14171a;
+
+  
+
+  --ink-primary: #191816;
+
+  --ink-secondary: #4a4740;
+
+  --ink-muted: #57534b;
+
+  --ink-faded: #999489;
+
+  /* Editorial & Archival Accents */
+
+  --accent-terracotta: #9c381e;
+
+  --accent-terracotta-soft: rgba(156, 56, 30, 0.08);
+
+  --accent-indigo: #1e3656;
+
+  --accent-indigo-soft: rgba(30, 54, 86, 0.08);
+
+  --accent-gold: #c59b27;
+
+  --accent-gold-soft: rgba(197, 155, 39, 0.12);
+
+  --accent-forest: #274836;
+
+  /* Rules & Lines */
+
+  --rule-crisp: #ded8cb;
+
+  --rule-subtle: #eae5d8;
+
+  --rule-bold: #191816;
+
+  /* Typography Stacks */
+
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+
+  --font-reading: 'Literata', Georgia, Cambria, serif;
+
+  --font-mono: 'JetBrains Mono', 'Courier Prime', Courier, monospace;
+
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Organic Physical Shadows */
+
+  --shadow-subtle: 0 2px 8px rgba(25, 24, 22, 0.04), 0 1px 2px rgba(25, 24, 22, 0.03);
+
+  --shadow-medium: 0 6px 24px rgba(25, 24, 22, 0.07), 0 2px 6px rgba(25, 24, 22, 0.04);
+
+  --shadow-elevated: 0 16px 40px rgba(25, 24, 22, 0.12), 0 4px 12px rgba(25, 24, 22, 0.06);
+
+  --shadow-modal: 0 32px 70px rgba(25, 24, 22, 0.25), 0 8px 24px rgba(25, 24, 22, 0.12);
+
+  /* Containers */
+
+  --container-max: 1180px;
+
+  --container-editorial: 1040px;
+
+  --prose-measure: 68ch;
+
+  /* Micro-transitions */
+
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --duration-swift: 0.2s;
+
+  --duration-standard: 0.35s;
+
+}
+
+/* 2. BASE RESET & BROWSER SURFACES */
+
+*, *::before, *::after {
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+html {
+
+  font-size: 16px;
+
+  scroll-behavior: smooth;
+
+  background-color: var(--bg-paper);
+
+  color: var(--ink-primary);
+
+}
+
+body {
+
+  font-family: var(--font-reading);
+
+  font-size: 1.0625rem; /* 17px */
+
+  line-height: 1.8;
+
+  color: var(--ink-primary);
+
+  background-color: var(--bg-paper); /* impeccable-disable-line cream-palette: user explicit brief for cotton paper monograph theme */
+
+  -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+
+  overflow-x: hidden;
+
+  background-image: 
+
+    radial-gradient(circle at 15% 10%, rgba(156, 56, 30, 0.015) 0%, transparent 40%),
+
+    radial-gradient(circle at 85% 90%, rgba(30, 54, 86, 0.015) 0%, transparent 40%);
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+  line-height: 1.35;
+
+}
+
+button, input, select, textarea {
+
+  font-family: inherit;
+
+  font-size: inherit;
+
+  line-height: 1.5;
+
+}
+
+/* Custom Themed Text Selection */
+
+::selection {
+
+  background-color: #ebd9ba;
+
+  color: #191816;
+
+}
+
+/* Themed Scrollbar */
+
+::-webkit-scrollbar {
+
+  width: 8px;
+
+  height: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+
+  background: var(--bg-paper);
+
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: #ded8cb;
+
+  border-radius: 4px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+  background: #c2b9a7;
+
+}
+
+/* Accessible Themed Focus Ring */
+
+:focus-visible {
+
+  outline: 2px solid var(--accent-terracotta);
+
+  outline-offset: 3px;
+
+}
+
+/* 3. READING PROGRESS BAR */
+
+.reading-progress-track {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 3px;
+
+  background-color: transparent;
+
+  z-index: 1000;
+
+}
+
+.reading-progress-fill {
+
+  height: 100%;
+
+  width: 0%;
+
+  background-color: var(--accent-terracotta);
+
+  transition: width 0.08s linear;
+
+}
+
+/* 4. CURATORIAL MASTHEAD */
+
+.masthead {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 500;
+
+  background-color: rgba(247, 244, 237, 0.94);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid var(--rule-crisp);
+
+  padding: 0.85rem 0;
+
+  transition: background-color var(--duration-swift);
+
+}
+
+.container {
+
+  max-width: var(--container-max);
+
+  margin-left: auto;
+
+  margin-right: auto;
+
+  padding-left: 2rem;
+
+  padding-right: 2rem;
+
+}
+
+.container-editorial {
+
+  max-width: var(--container-editorial);
+
+  margin-left: auto;
+
+  margin-right: auto;
+
+  padding-left: 2rem;
+
+  padding-right: 2rem;
+
+}
+
+.masthead-inner {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1.5rem;
+
+  flex-wrap: wrap;
+
+}
+
+.masthead-identity {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.85rem;
+
+}
+
+.brand-monogram {
+
+  width: 32px;
+
+  height: 32px;
+
+  border: 1px solid var(--rule-crisp);
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--accent-terracotta);
+
+  text-decoration: none;
+
+  font-family: var(--font-display);
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  background: #ffffff;
+
+  transition: all var(--duration-swift) var(--ease-spring);
+
+}
+
+.brand-monogram:hover {
+
+  background-color: var(--accent-terracotta);
+
+  color: #ffffff;
+
+  border-color: var(--accent-terracotta);
+
+}
+
+.brand-meta,
+
+.brand-meta-link {
+
+  display: flex;
+
+  flex-direction: column;
+
+  text-decoration: none;
+
+  color: inherit;
+
+}
+
+.brand-meta-link:hover .brand-title {
+
+  color: var(--accent-terracotta);
+
+}
+
+.brand-title {
+
+  font-family: var(--font-display);
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  letter-spacing: -0.01em;
+
+  color: var(--ink-primary);
+
+  line-height: 1.35;
+
+}
+
+.brand-subtitle {
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: var(--ink-muted);
+
+}
+
+/* Quick Nav Pills */
+
+.quick-nav-pills {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+
+  padding: 0.2rem 0;
+
+}
+
+.quick-nav-pills::-webkit-scrollbar {
+
+  display: none;
+
+}
+
+.pill-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.35rem;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.8125rem;
+
+  font-weight: 500;
+
+  color: var(--ink-secondary);
+
+  text-decoration: none;
+
+  padding: 0.3rem 0.65rem;
+
+  border-radius: 20px;
+
+  background: transparent;
+
+  border: 1px solid transparent;
+
+  transition: all var(--duration-swift) var(--ease-spring);
+
+  white-space: nowrap;
+
+}
+
+.pill-link:hover, .pill-link.active {
+
+  background: var(--bg-surface-warm);
+
+  border-color: var(--rule-crisp);
+
+  color: var(--ink-primary);
+
+}
+
+.pill-link .roman {
+
+  font-family: var(--font-display);
+
+  font-weight: 700;
+
+  color: var(--accent-terracotta);
+
+  font-size: 0.875rem;
+
+}
+
+.pill-link.pill-tool {
+
+  background: var(--accent-terracotta-soft);
+
+  color: var(--accent-terracotta);
+
+  border-color: rgba(156, 56, 30, 0.2);
+
+}
+
+/* 5. PROLOGUE SECTION */
+
+.prologue-canvas {
+
+  padding: 5rem 0 4.5rem 0;
+
+  border-bottom: 1px solid var(--rule-crisp);
+
+}
+
+.hero-title {
+
+  font-family: var(--font-display);
+
+  font-size: clamp(3.2rem, 6vw, 4.8rem);
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.02em;
+
+  color: var(--ink-primary);
+
+  margin-bottom: 1rem;
+
+}
+
+.hero-thesis {
+
+  font-family: var(--font-display);
+
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+
+  font-style: italic;
+
+  line-height: 1.35;
+
+  color: var(--accent-terracotta);
+
+  margin-bottom: 2.75rem;
+
+  max-width: 52ch;
+
+}
+
+.thesis-opening-block {
+
+  max-width: var(--prose-measure);
+
+  margin-bottom: 3.5rem;
+
+}
+
+.lead-text {
+
+  font-size: 1.25rem;
+
+  line-height: 1.75;
+
+  color: var(--ink-primary);
+
+  margin-bottom: 1.5rem;
+
+  max-width: 62ch;
+
+}
+
+.illuminated-initial {
+
+  font-family: var(--font-display);
+
+  float: left;
+
+  font-size: 4.5rem;
+
+  line-height: 0.8;
+
+  margin-top: 0.2rem;
+
+  margin-right: 0.75rem;
+
+  color: var(--accent-terracotta);
+
+  font-weight: 700;
+
+}
+
+.prose-body {
+
+  font-size: 1.0625rem;
+
+  line-height: 1.85;
+
+  color: var(--ink-secondary);
+
+  max-width: 68ch;
+
+}
+
+/* 6. CHAPTER MONOGRAPH LAYOUT */
+
+.chapter-stage {
+
+  padding: 6.5rem 0;
+
+  border-bottom: 1px solid var(--rule-crisp);
+
+}
+
+.chapter-header-monograph,
+
+.chapter-monograph-head {
+
+  margin-bottom: 3.5rem;
+
+}
+
+.chapter-sequence {
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.03em;
+
+  text-transform: uppercase;
+
+  color: var(--accent-terracotta);
+
+  font-weight: 600;
+
+  margin-bottom: 0.5rem;
+
+}
+
+.chapter-title {
+
+  font-family: var(--font-display);
+
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+
+  line-height: 1.3;
+
+  color: var(--ink-primary);
+
+  margin-bottom: 0.45rem;
+
+}
+
+.chapter-subtitle {
+
+  font-family: var(--font-display);
+
+  font-size: 1.35rem;
+
+  font-style: italic;
+
+  line-height: 1.45;
+
+  color: var(--ink-secondary);
+
+}
+
+/* 7. DUAL EVIDENCE GALLERY (INTERACTIVE ARTIFACT ARCHITECTURE) */
+
+.evidence-gallery-dual {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 2.5rem;
+
+  margin-bottom: 4.5rem;
+
+  align-items: stretch;
+
+}
+
+@media (max-width: 860px) {
+
+  .evidence-gallery-dual {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+.evidence-frame {
+
+  background: transparent;
+
+  border-top: 1px solid var(--rule-crisp);
+
+  border-bottom: 1px solid var(--rule-crisp);
+
+  border-left: none;
+
+  border-right: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+
+  padding: 1.5rem 0.25rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.evidence-frame:hover {
+
+  transform: none;
+
+  box-shadow: none;
+
+}
+
+/* Real Archival Photo Mounting */
+
+.archival-photo-mount {
+
+  background: #ffffff;
+
+  border: 1px solid var(--rule-crisp);
+
+  padding: 0.75rem;
+
+  box-shadow: 0 4px 16px rgba(25, 24, 22, 0.05);
+
+  margin-bottom: 1.25rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.archival-photo-canvas {
+
+  width: 100%;
+
+  height: clamp(300px, 42vw, 380px);
+
+  background: #faf8f5;
+
+  border: 1px solid var(--rule-subtle);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  position: relative;
+
+}
+
+.archival-photo-canvas.dark-matte {
+
+  background: #0e1117;
+
+  border-color: #21262d;
+
+}
+
+.archival-photo-canvas img,
+
+.archival-photo-mount > img {
+
+  max-width: 100%;
+
+  max-height: 100%;
+
+  width: auto;
+
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+
+  transition: filter 0.4s ease-in-out, transform var(--duration-standard) var(--ease-spring);
+
+}
+
+.archival-photo-canvas.occluded img,
+
+.archival-photo-mount.occluded img {
+
+  filter: blur(14px) contrast(80%) brightness(125%);
+
+}
+
+.archival-photo-mount:hover img {
+
+  transform: scale(1.015);
+
+}
+
+.photo-mount-footer {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 0.65rem;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.72rem;
+
+  color: var(--ink-muted);
+
+  letter-spacing: 0.02em;
+
+}
+
+.photo-verified-tag {
+
+  color: var(--accent-terracotta);
+
+  font-weight: 600;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.25rem;
+
+}
+
+.evidence-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: var(--ink-muted);
+
+  border-bottom: 1px solid var(--rule-subtle);
+
+  padding-bottom: 0.65rem;
+
+  margin-bottom: 1.25rem;
+
+}
+
+.evidence-id {
+
+  font-weight: 600;
+
+  color: var(--ink-primary);
+
+}
+
+.evidence-caption {
+
+  margin-top: 1.25rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.45rem;
+
+}
+
+.evidence-title {
+
+  font-family: var(--font-display);
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  color: var(--ink-primary);
+
+}
+
+.evidence-caption p {
+
+  font-size: 0.9375rem;
+
+  line-height: 1.6;
+
+  color: var(--ink-secondary);
+
+}
+
+.inspect-record-btn {
+
+  align-self: flex-start;
+
+  margin-top: 0.4rem;
+
+  background: transparent;
+
+  border: none;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.8125rem;
+
+  font-weight: 600;
+
+  color: var(--accent-terracotta);
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+
+  cursor: pointer;
+
+  transition: color var(--duration-swift);
+
+}
+
+.inspect-record-btn:hover {
+
+  color: var(--ink-primary);
+
+}
+
+/* ==========================================================================
+
+   INDIVIDUAL ARTIFACT REALISM STYLES (NO AI PLACEHOLDERS!)
+
+   ========================================================================== */
+
+.tech-rig-visual,
+
+.receipt-tape-visual,
+
+.temple-shrine-visual,
+
+.telugu-primer-visual,
+
+.cbsa-document-visual,
+
+.ophthalmic-chart-visual,
+
+.caregiving-log-visual,
+
+.polycarbonate-license-visual,
+
+.polaroid-visual {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.rig-case-glow {
+
+  background: #090c10;
+
+  border: 1px solid #30363d;
+
+  border-radius: 4px;
+
+  padding: 1.25rem;
+
+  color: #c9d1d9;
+
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+
+}
+
+.rig-hud-top {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  margin-bottom: 0.75rem;
+
+  padding-bottom: 0.5rem;
+
+  border-bottom: 1px solid #21262d;
+
+}
+
+.rig-status-pill {
+
+  color: #58a6ff;
+
+}
+
+.rig-load-metric {
+
+  color: #e07a5f;
+
+}
+
+.rig-diagram {
+
+  width: 100%;
+
+  margin-bottom: 0.75rem;
+
+}
+
+.rig-svg {
+
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+}
+
+.rig-specs-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  padding-top: 0.5rem;
+
+  border-top: 1px solid #21262d;
+
+}
+
+.spec-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.signal-badge {
+
+  background: rgba(88, 166, 255, 0.15);
+
+  color: #58a6ff;
+
+  padding: 0.15rem 0.45rem;
+
+  border-radius: 2px;
+
+}
+
+/* Thermal Receipt Paper */
+
+.receipt-tape-visual {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.thermal-receipt-paper {
+
+  background: #fffdf9;
+
+  border: 1px dashed #c9c3b4;
+
+  padding: 1.5rem 1.25rem;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: #2b2823;
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+.receipt-company {
+
+  font-weight: 700;
+
+  text-align: center;
+
+  font-size: 0.8125rem;
+
+}
+
+.receipt-doc-title {
+
+  text-align: center;
+
+  color: var(--ink-muted);
+
+  font-size: 0.75rem;
+
+  margin-top: 0.15rem;
+
+}
+
+.receipt-separator {
+
+  color: #bbb4a4;
+
+  text-align: center;
+
+  margin: 0.4rem 0;
+
+  letter-spacing: -0.05em;
+
+}
+
+.receipt-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  gap: 0.35rem 0.75rem;
+
+  margin-bottom: 0.5rem;
+
+}
+
+.highlight-line {
+
+  color: var(--accent-terracotta);
+
+}
+
+.receipt-rubber-stamp {
+
+  margin: 0.75rem auto;
+
+  border: 2px solid var(--accent-terracotta);
+
+  color: var(--accent-terracotta);
+
+  font-weight: 700;
+
+  text-align: center;
+
+  padding: 0.35rem 0.5rem;
+
+  transform: rotate(-3deg);
+
+  letter-spacing: 0.04em;
+
+  font-size: 0.75rem;
+
+}
+
+.receipt-barcode {
+
+  text-align: center;
+
+  font-size: 0.8125rem;
+
+  color: #555047;
+
+  margin-top: 0.5rem;
+
+  text-transform: uppercase;
+
+}
+
+.rig-spec-readout {
+
+  display: inline-block;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: var(--accent-terracotta);
+
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+
+}
+
+/* CHAPTER 2: SACRED TEMPLE SANCTUM & WAX SEAL TONSURE */
+
+.sanctum-arch-frame {
+
+  background: #140d09;
+
+  border-radius: 4px;
+
+  padding: 1rem;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.9);
+
+  color: #d4a373;
+
+}
+
+.sanctum-svg {
+
+  width: 100%;
+
+  max-width: 300px;
+
+  height: auto;
+
+}
+
+.flame-flicker {
+
+  animation: flame-pulse 2s infinite ease-in-out alternate;
+
+  transform-origin: center;
+
+}
+
+@keyframes flame-pulse {
+
+  0% { transform: scale(0.96) translateY(1px); opacity: 0.9; }
+
+  100% { transform: scale(1.05) translateY(-2px); opacity: 1; fill: #ffd166; }
+
+}
+
+/* Tonsure Parchment Envelope */
+
+.parchment-envelope {
+
+  background: #fdfbf7;
+
+  border: 1px solid #dcd4c3;
+
+  padding: 1.5rem 1.25rem;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+}
+
+/* Personal Reflection & Family Reality Cards (Clean, authentic student voice) */
+
+.reflection-card-visual {
+
+  background: #ffffff;
+
+  border: 1px solid var(--rule-crisp);
+
+  border-radius: 4px;
+
+  padding: 1.25rem;
+
+  box-shadow: 0 4px 14px rgba(25, 24, 22, 0.04);
+
+  margin-bottom: 1.25rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+
+}
+
+.reflection-card-body {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.6rem;
+
+}
+
+.reflection-tag {
+
+  font-family: var(--font-mono);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  color: var(--accent-terracotta);
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+}
+
+.reflection-headline {
+
+  font-family: var(--font-serif);
+
+  font-size: 1.2rem;
+
+  font-weight: 600;
+
+  color: var(--ink-pure);
+
+  margin: 0;
+
+  line-height: 1.3;
+
+}
+
+.reflection-quote {
+
+  font-family: var(--font-serif);
+
+  font-style: italic;
+
+  font-size: 0.95rem;
+
+  color: var(--ink-secondary);
+
+  background: #faf8f5;
+
+  border-left: 3px solid var(--accent-terracotta);
+
+  padding: 0.65rem 0.85rem;
+
+  margin: 0.25rem 0;
+
+  border-radius: 0 4px 4px 0;
+
+  line-height: 1.5;
+
+}
+
+.reflection-points {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.4rem;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.85rem;
+
+  color: var(--ink-secondary);
+
+}
+
+.reflection-points .point-item {
+
+  line-height: 1.45;
+
+}
+
+.reflection-points strong {
+
+  color: var(--ink-pure);
+
+}
+
+.ceremonial-mandala-emblem {
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 1rem;
+
+}
+
+.wax-seal-emboss {
+
+  width: 48px;
+
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(circle, #b83a24 0%, #872412 100%);
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 2px solid #6d1b0d;
+
+}
+
+.seal-letter {
+
+  color: #f7e1d7;
+
+  font-family: var(--font-display);
+
+  font-size: 1.4rem;
+
+  font-weight: 700;
+
+}
+
+.envelope-text-block {
+
+  text-align: center;
+
+  font-family: var(--font-mono);
+
+}
+
+.rite-title {
+
+  font-weight: 700;
+
+  font-size: 0.8125rem;
+
+  color: var(--accent-terracotta);
+
+}
+
+.rite-desc {
+
+  font-size: 0.75rem;
+
+  color: var(--ink-secondary);
+
+  margin-top: 0.2rem;
+
+}
+
+.rite-metadata {
+
+  font-size: 0.75rem;
+
+  color: var(--ink-muted);
+
+  margin-top: 0.4rem;
+
+  padding-bottom: 0.75rem;
+
+  border-bottom: 1px dashed var(--rule-crisp);
+
+}
+
+.razor-ceremony-strip {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: var(--ink-muted);
+
+  margin-top: 0.5rem;
+
+}
+
+/* Faith Lens Controller */
+
+.faith-lens-controller {
+
+  background: var(--bg-surface-warm);
+
+  border: 1px solid var(--rule-crisp);
+
+  border-radius: 3px;
+
+  padding: 0.75rem 1rem;
+
+  margin-top: 1rem;
+
+}
+
+.lens-tab-bar {
+
+  display: flex;
+
+  gap: 0.35rem;
+
+  margin-bottom: 0.5rem;
+
+}
+
+.lens-tab {
+
+  flex: 1;
+
+  background: #ffffff;
+
+  border: 1px solid var(--rule-crisp);
+
+  font-family: var(--font-sans);
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  padding: 0.35rem;
+
+  border-radius: 2px;
+
+  cursor: pointer;
+
+  color: var(--ink-secondary);
+
+  transition: all var(--duration-swift);
+
+}
+
+.lens-tab.active {
+
+  background: var(--accent-terracotta);
+
+  color: #ffffff;
+
+  border-color: var(--accent-terracotta);
+
+}
+
+.lens-feedback-text {
+
+  font-size: 0.8125rem;
+
+  line-height: 1.5;
+
+  color: var(--ink-primary);
+
+}
+
+/* CHAPTER 3: TELUGU SLATE & CBSA IMMIGRATION CARD */
+
+.slate-chalkboard-slab {
+
+  background: #202321;
+
+  border: 10px solid #8d6b4f;
+
+  border-radius: 4px;
+
+  padding: 1.5rem 1rem;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+  position: relative;
+
+}
+
+.chalk-surface {
+
+  text-align: center;
+
+}
+
+.telugu-script-display,
+
+.kannada-script-display {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 1.5rem;
+
+  font-family: 'Spectral', Georgia, serif;
+
+  font-size: 2.8rem;
+
+  color: #f7f9f7;
+
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+
+}
+
+.phonetic-subtext {
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: #9cb5a2;
+
+  margin-top: 0.5rem;
+
+  letter-spacing: 0.02em;
+
+}
+
+.slate-red-check {
+
+  font-family: var(--font-display);
+
+  color: #e07a5f;
+
+  font-weight: 700;
+
+  font-size: 0.9375rem;
+
+  margin-top: 0.75rem;
+
+}
+
+/* CBSA Immigration Landing Card */
+
+.guilloche-security-document {
+
+  background: #ffffff;
+
+  border: 2px solid var(--accent-indigo);
+
+  padding: 1.25rem;
+
+  box-shadow: 0 4px 14px rgba(30, 54, 86, 0.08);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  position: relative;
+
+}
+
+.cbsa-masthead {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  border-bottom: 2px solid var(--accent-indigo);
+
+  padding-bottom: 0.5rem;
+
+}
+
+.cbsa-leaf {
+
+  color: #b83a24;
+
+  font-size: 1.5rem;
+
+}
+
+.cbsa-agency-title {
+
+  color: var(--accent-indigo);
+
+  font-weight: 700;
+
+  font-size: 0.8125rem;
+
+}
+
+.cbsa-subagency {
+
+  font-size: 0.75rem;
+
+  color: var(--ink-muted);
+
+}
+
+.cbsa-field-matrix {
+
+  margin: 0.85rem 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.4rem;
+
+}
+
+.cbsa-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.cbsa-stamp-text {
+
+  color: var(--accent-indigo);
+
+}
+
+.unrecognized-flag {
+
+  color: var(--accent-terracotta);
+
+}
+
+.cbsa-stamp-box {
+
+  margin-top: 0.75rem;
+
+  padding-top: 0.5rem;
+
+  border-top: 1px dashed var(--rule-crisp);
+
+  display: flex;
+
+  justify-content: center;
+
+}
+
+.cbsa-ink-stamp {
+
+  border: 2px solid #b83a24;
+
+  color: #b83a24;
+
+  font-weight: 700;
+
+  padding: 0.25rem 0.65rem;
+
+  transform: rotate(-2deg);
+
+  letter-spacing: 0.04em;
+
+  font-size: 0.75rem;
+
+  text-transform: uppercase;
+
+}
+
+/* CHAPTER 4: SNELLEN CHART & CAREGIVING LOG */
+
+.eye-chart-canvas {
+
+  background: #ffffff;
+
+  border: 1px solid var(--rule-crisp);
+
+  padding: 1.5rem 1rem;
+
+  text-align: center;
+
+  font-family: var(--font-sans);
+
+  font-weight: 900;
+
+  position: relative;
+
+  transition: filter 0.4s ease-in-out;
+
+}
+
+.eye-chart-canvas.occluded {
+
+  filter: blur(14px) contrast(80%) brightness(125%);
+
+}
+
+.snellen-line {
+
+  display: block;
+
+  letter-spacing: normal;
+
+  word-spacing: 1.25rem;
+
+  color: #111111;
+
+  text-transform: uppercase;
+
+}
+
+.snellen-line.line-1 { font-size: 2.8rem; }
+
+.snellen-line.line-2 { font-size: 2rem; }
+
+.snellen-line.line-3 { font-size: 1.4rem; }
+
+.snellen-line.line-4 { font-size: 1.05rem; }
+
+.snellen-line.line-5 { font-size: 0.8125rem; }
+
+.surgical-tape-overlay {
+
+  margin-top: 1rem;
+
+  background: rgba(241, 236, 225, 0.9);
+
+  border: 1px dashed var(--accent-terracotta);
+
+  padding: 0.5rem;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: var(--accent-terracotta);
+
+}
+
+.sensory-sim-controller {
+
+  margin-top: 1rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+
+}
+
+.sensory-toggle-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  border: none;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.8125rem;
+
+  font-weight: 600;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 3px;
+
+  cursor: pointer;
+
+  transition: all var(--duration-swift);
+
+}
+
+.sensory-toggle-btn:hover {
+
+  background: var(--accent-terracotta);
+
+}
+
+.occlusion-hint {
+
+  font-size: 0.75rem;
+
+  color: var(--ink-muted);
+
+  text-align: center;
+
+  font-style: italic;
+
+}
+
+/* Caregiving Log Notebook */
+
+.care-journal-page {
+
+  background: #fffefb;
+
+  border: 1px solid #d8d0c2;
+
+  padding: 1.25rem;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+}
+
+.journal-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  border-bottom: 2px solid #b83a24;
+
+  padding-bottom: 0.35rem;
+
+  margin-bottom: 0.75rem;
+
+  font-weight: 700;
+
+  color: #b83a24;
+
+}
+
+.care-entry-row {
+
+  margin-bottom: 0.65rem;
+
+  line-height: 1.45;
+
+}
+
+.care-time {
+
+  font-weight: 700;
+
+  color: var(--ink-primary);
+
+}
+
+.care-note {
+
+  color: var(--ink-secondary);
+
+}
+
+.journal-footer {
+
+  margin-top: 0.85rem;
+
+  padding-top: 0.5rem;
+
+  border-top: 1px dashed var(--rule-crisp);
+
+  text-align: center;
+
+  font-weight: 700;
+
+  color: var(--accent-terracotta);
+
+}
+
+/* CHAPTER 5: DRIVER'S LICENSE & CONCESSION TRANSIT PASS */
+
+.bc-license-evidence {
+
+  background: linear-gradient(135deg, #e4ecf3 0%, #cbd9e6 100%);
+
+  border: 1px solid #9fb4c7;
+
+  border-radius: 6px;
+
+  padding: 1.25rem;
+
+  box-shadow: 0 4px 16px rgba(30, 54, 86, 0.12);
+
+  font-family: var(--font-mono);
+
+  position: relative;
+
+}
+
+.license-top-strip {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  color: var(--accent-indigo);
+
+  border-bottom: 2px solid var(--accent-indigo);
+
+  padding-bottom: 0.35rem;
+
+  margin-bottom: 0.75rem;
+
+}
+
+.license-body-grid {
+
+  display: grid;
+
+  grid-template-columns: 80px 1fr auto;
+
+  gap: 1rem;
+
+  align-items: center;
+
+}
+
+.license-photo-placeholder {
+
+  position: relative;
+
+  width: 75px;
+
+  height: 95px;
+
+  background: #bbc9d6;
+
+  border: 1px solid #899fb3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 0.75rem;
+
+  color: #1a2632;
+
+  padding: 0.75rem;
+
+}
+
+.green-n-badge {
+
+  position: absolute;
+
+  bottom: -6px;
+
+  right: -6px;
+
+  background: #2e7d32;
+
+  color: #ffffff;
+
+  font-weight: 900;
+
+  font-size: 1.1rem;
+
+  width: 24px;
+
+  height: 24px;
+
+  border-radius: 3px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #ffffff;
+
+}
+
+.red-l-badge {
+
+  position: absolute;
+
+  bottom: -6px;
+
+  right: -6px;
+
+  background: #c62828;
+
+  color: #ffffff;
+
+  font-weight: 900;
+
+  font-size: 1.1rem;
+
+  width: 24px;
+
+  height: 24px;
+
+  border-radius: 3px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #ffffff;
+
+}
+
+.license-text-data {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.25rem;
+
+  font-size: 0.75rem;
+
+  color: #1a2632;
+
+}
+
+.license-text-data strong {
+
+  color: #0d161f;
+
+}
+
+.smart-chip-gold {
+
+  width: 32px;
+
+  height: 26px;
+
+  background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+
+  border: 1px solid #856c1d;
+
+  border-radius: 3px;
+
+}
+
+.license-hologram-strip {
+
+  margin-top: 0.75rem;
+
+  padding-top: 0.4rem;
+
+  border-top: 1px solid #a8bccd;
+
+  font-size: 0.75rem;
+
+  color: #1a2632;
+
+  text-align: center;
+
+  letter-spacing: 0.03em;
+
+}
+
+/* Concession Transit Pass */
+
+.concession-transit-pass {
+
+  background: #eef7ee;
+
+  border: 1px solid #9dc79e;
+
+  border-radius: 6px;
+
+  padding: 1.25rem;
+
+  font-family: var(--font-mono);
+
+  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.08);
+
+}
+
+.transit-orange-stripe {
+
+  background: #bf360c;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  font-size: 0.75rem;
+
+  padding: 0.4rem;
+
+  text-align: center;
+
+  border-radius: 3px;
+
+  margin-bottom: 0.75rem;
+
+}
+
+.transit-body {
+
+  text-align: center;
+
+  font-size: 0.75rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.5rem;
+
+}
+
+.transit-rule-notice {
+
+  font-weight: 700;
+
+  color: #1b5e20;
+
+}
+
+.transit-stamp-box {
+
+  background: #ffffff;
+
+  border: 1px dashed #81c784;
+
+  padding: 0.5rem;
+
+  font-size: 0.75rem;
+
+  color: #2e7d32;
+
+}
+
+.transit-paternal-quote {
+
+  font-style: italic;
+
+  color: var(--ink-muted);
+
+  font-size: 0.75rem;
+
+}
+
+/* Age Paradox Controller */
+
+.age-paradox-controller {
+
+  background: var(--bg-surface-warm);
+
+  border: 1px solid var(--rule-crisp);
+
+  border-radius: 3px;
+
+  padding: 0.75rem 1rem;
+
+  margin-top: 1rem;
+
+}
+
+.paradox-toggle-buttons {
+
+  display: flex;
+
+  gap: 0.35rem;
+
+  margin-bottom: 0.5rem;
+
+}
+
+.paradox-btn {
+
+  flex: 1;
+
+  background: #ffffff;
+
+  border: 1px solid var(--rule-crisp);
+
+  font-family: var(--font-sans);
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  padding: 0.35rem;
+
+  border-radius: 2px;
+
+  cursor: pointer;
+
+  color: var(--ink-secondary);
+
+  transition: all var(--duration-swift);
+
+}
+
+.paradox-btn.active {
+
+  background: var(--accent-indigo);
+
+  color: #ffffff;
+
+  border-color: var(--accent-indigo);
+
+}
+
+.paradox-display-box {
+
+  font-size: 0.8125rem;
+
+  color: var(--ink-primary);
+
+  line-height: 1.45;
+
+}
+
+/* CHAPTER 6: BABY POLAROID & CHARCOAL SUIT BLUEPRINT */
+
+.polaroid-frame-realistic {
+
+  background: #ffffff;
+
+  padding: 1rem 1rem 1.75rem 1rem;
+
+  border: 1px solid #d9d4c7;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  transform: rotate(-1.5deg);
+
+  transition: transform var(--duration-standard) var(--ease-spring);
+
+}
+
+.polaroid-frame-realistic:hover {
+
+  transform: rotate(0deg) scale(1.02);
+
+}
+
+.polaroid-photo-canvas {
+
+  background: #eee8db;
+
+  border: 1px solid #ded6c5;
+
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+}
+
+.polaroid-photo-canvas img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+}
+
+.polaroid-vignette-layer {
+
+  width: 100%;
+
+  max-width: 200px;
+
+}
+
+.baby-frock-svg {
+
+  width: 100%;
+
+  height: auto;
+
+}
+
+.polaroid-handwritten-caption {
+
+  font-family: var(--font-display);
+
+  font-style: italic;
+
+  font-size: 1.05rem;
+
+  color: var(--ink-secondary);
+
+  text-align: center;
+
+  margin-top: 1rem;
+
+}
+
+/* Tailored Suit Blueprint */
+
+.suit-blueprint-plate {
+
+  background: #111418;
+
+  border: 1px solid #30363d;
+
+  border-radius: 4px;
+
+  padding: 1.25rem;
+
+  color: #f0f6fc;
+
+}
+
+.blueprint-lines {
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 0.75rem;
+
+}
+
+.suit-svg {
+
+  width: 100%;
+
+  max-width: 200px;
+
+  height: auto;
+
+}
+
+.blueprint-meta {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.2rem;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  text-align: center;
+
+  border-top: 1px solid #21262d;
+
+  padding-top: 0.5rem;
+
+}
+
+.blueprint-meta strong {
+
+  color: #f28b72;
+
+}
+
+/* Performativity Lens Controller */
+
+.performativity-lens-controller {
+
+  margin-top: 1rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.4rem;
+
+}
+
+.performativity-toggle-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  background: var(--bg-surface-warm);
+
+  border: 1px solid var(--rule-crisp);
+
+  padding: 0.45rem 0.85rem;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.8125rem;
+
+  font-weight: 600;
+
+  color: var(--ink-primary);
+
+  border-radius: 3px;
+
+  cursor: pointer;
+
+  transition: all var(--duration-swift);
+
+}
+
+.performativity-toggle-btn:hover {
+
+  background: #ffffff;
+
+  border-color: var(--ink-secondary);
+
+}
+
+.performativity-callout {
+
+  font-family: var(--font-display);
+
+  font-style: italic;
+
+  font-size: 0.9375rem;
+
+  line-height: 1.5;
+
+  color: var(--accent-terracotta);
+
+  text-align: center;
+
+}
+
+/* 8. MONOGRAPH PROSE SPREAD (PACED ESSAY DISCOURSE) */
+
+.editorial-prose-spread,
+
+.monograph-prose-spread {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 2.5rem 3rem;
+
+  margin-top: 3.5rem;
+
+  padding-top: 3rem;
+
+  border-top: 1px solid var(--rule-crisp);
+
+}
+
+@media (max-width: 860px) {
+
+  .editorial-prose-spread,
+
+  .monograph-prose-spread {
+
+    grid-template-columns: 1fr;
+
+    gap: 2.5rem;
+
+  }
+
+}
+
+.discourse-column {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.85rem;
+
+}
+
+.discourse-heading {
+
+  font-family: var(--font-display);
+
+  font-size: 1.65rem;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  color: var(--ink-primary);
+
+  padding-bottom: 0.45rem;
+
+  border-bottom: 1px solid var(--rule-crisp);
+
+}
+
+.discourse-column p {
+
+  font-size: 1.0625rem;
+
+  line-height: 1.8;
+
+  color: var(--ink-secondary);
+
+  max-width: 65ch;
+
+}
+
+.scholarly-highlight {
+
+  background: var(--bg-surface-warm);
+
+  border: 1px solid var(--rule-crisp);
+
+  border-radius: 3px;
+
+  padding: 1.5rem 1.75rem;
+
+}
+
+.forward-shift-box {
+
+  background: #ffffff;
+
+  border: 1px solid var(--rule-crisp);
+
+  border-radius: 3px;
+
+  padding: 1.5rem 1.75rem;
+
+  box-shadow: var(--shadow-subtle);
+
+}
+
+.shift-quote {
+
+  font-family: var(--font-display);
+
+  font-size: 1.2rem;
+
+  font-style: italic;
+
+  line-height: 1.5;
+
+  color: var(--accent-terracotta);
+
+  margin-bottom: 0.85rem;
+
+}
+
+.shift-resolution {
+
+  font-size: 0.9375rem;
+
+  line-height: 1.65;
+
+  color: var(--ink-primary);
+
+}
+
+/* 9. INTERSECTIONALITY LAB & DYNAMIC MATRIX */
+
+.intersection-stage {
+
+  /* Inherits continuous cotton paper surface */
+
+}
+
+.matrix-instruction {
+
+  max-width: var(--prose-measure);
+
+  font-size: 1.1rem;
+
+  line-height: 1.7;
+
+  color: var(--ink-secondary);
+
+  margin-bottom: 2.5rem;
+
+}
+
+.matrix-selection-strip {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.5rem;
+
+  margin-bottom: 2.5rem;
+
+  flex-wrap: wrap;
+
+}
+
+.select-cluster {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+
+  flex: 1;
+
+  min-width: 240px;
+
+}
+
+.select-cluster label {
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  text-transform: uppercase;
+
+  color: var(--ink-muted);
+
+  letter-spacing: 0.02em;
+
+}
+
+.styled-select {
+
+  background: #ffffff;
+
+  border: 1px solid var(--rule-crisp);
+
+  font-family: var(--font-sans);
+
+  font-size: 0.9375rem;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  padding: 0.65rem 1rem;
+
+  border-radius: 3px;
+
+  color: var(--ink-primary);
+
+  cursor: pointer;
+
+}
+
+.cross-icon {
+
+  font-size: 1.5rem;
+
+  color: var(--accent-terracotta);
+
+  font-weight: 700;
+
+  margin-top: 1.25rem;
+
+}
+
+.intersection-synthesis-stage {
+
+  background: #ffffff;
+
+  border: 1px solid var(--rule-crisp);
+
+  border-radius: 4px;
+
+  padding: 2.5rem;
+
+  box-shadow: var(--shadow-medium);
+
+  transition: all var(--duration-swift);
+
+}
+
+.synthesis-stage-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 1.25rem;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+
+}
+
+.power-vector-badge {
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  background: var(--accent-terracotta-soft);
+
+  color: var(--accent-terracotta);
+
+  padding: 0.3rem 0.65rem;
+
+  border-radius: 3px;
+
+}
+
+.theoretical-lens {
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: var(--accent-indigo);
+
+  font-weight: 600;
+
+}
+
+.synthesis-headline {
+
+  font-family: var(--font-display);
+
+  font-size: 2.15rem;
+
+  font-weight: 700;
+
+  color: var(--ink-primary);
+
+  line-height: 1.35;
+
+  margin-bottom: 1.75rem;
+
+  padding-bottom: 0.85rem;
+
+  border-bottom: 1px solid var(--rule-crisp);
+
+}
+
+.synthesis-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 2rem;
+
+  margin-bottom: 1.75rem;
+
+}
+
+@media (max-width: 760px) {
+
+  .synthesis-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+.synthesis-column h4 {
+
+  font-family: var(--font-display);
+
+  font-size: 1.3rem;
+
+  font-weight: 700;
+
+  color: var(--ink-primary);
+
+  margin-bottom: 0.45rem;
+
+}
+
+.synthesis-column p {
+
+  font-size: 0.9375rem;
+
+  line-height: 1.65;
+
+  color: var(--ink-secondary);
+
+}
+
+.cold-reflection-takeaway {
+
+  background: transparent;
+
+  border-left: 3px solid var(--accent-terracotta);
+
+  padding: 1rem 0 1rem 1.25rem;
+
+  border-radius: 0;
+
+  font-size: 0.9375rem;
+
+  line-height: 1.6;
+
+}
+
+.cold-reflection-takeaway strong {
+
+  color: var(--accent-terracotta);
+
+  display: block;
+
+  margin-bottom: 0.25rem;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+}
+
+/* 11. ACCESSIBLE EVIDENCE MODAL */
+
+.evidence-dialog,
+
+.provenance-dialog {
+
+  border: none;
+
+  background: transparent;
+
+  max-width: 640px;
+
+  width: 90%;
+
+  margin: auto;
+
+  padding: 0;
+
+}
+
+.evidence-dialog::backdrop,
+
+.provenance-dialog::backdrop {
+
+  background: rgba(25, 24, 22, 0.65);
+
+  backdrop-filter: blur(4px);
+
+  -webkit-backdrop-filter: blur(4px);
+
+}
+
+.dialog-content {
+
+  background: var(--bg-paper);
+
+  border: 1px solid var(--rule-crisp);
+
+  border-radius: 4px;
+
+  box-shadow: var(--shadow-modal);
+
+  padding: 2.25rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.25rem;
+
+}
+
+.dialog-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid var(--rule-crisp);
+
+  padding-bottom: 0.75rem;
+
+}
+
+.dialog-classification {
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: var(--accent-terracotta);
+
+  letter-spacing: 0.02em;
+
+  font-weight: 700;
+
+}
+
+.dialog-close {
+
+  background: transparent;
+
+  border: none;
+
+  font-size: 1.5rem;
+
+  color: var(--ink-muted);
+
+  cursor: pointer;
+
+  line-height: 1;
+
+}
+
+.dialog-close:hover {
+
+  color: var(--ink-primary);
+
+}
+
+.dialog-meta-bar {
+
+  display: flex;
+
+  gap: 1rem;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: var(--ink-muted);
+
+}
+
+.dialog-title {
+
+  font-family: var(--font-display);
+
+  font-size: 1.85rem;
+
+  font-weight: 700;
+
+  color: var(--ink-primary);
+
+  line-height: 1.35;
+
+}
+
+.dialog-prose {
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+
+  color: var(--ink-secondary);
+
+}
+
+.dialog-rubric-defense {
+
+  background: var(--bg-surface-warm);
+
+  border-left: 2px solid var(--accent-indigo);
+
+  padding: 0.85rem 1rem;
+
+  border-radius: 0 3px 3px 0;
+
+  font-size: 0.875rem;
+
+}
+
+.dialog-rubric-defense strong {
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: var(--accent-indigo);
+
+  display: block;
+
+  margin-bottom: 0.25rem;
+
+}
+
+.dialog-footer {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  border-top: 1px solid var(--rule-crisp);
+
+  padding-top: 1rem;
+
+}
+
+.action-btn {
+
+  background: var(--ink-primary);
+
+  color: #ffffff;
+
+  border: none;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.8125rem;
+
+  font-weight: 600;
+
+  padding: 0.5rem 1.25rem;
+
+  border-radius: 3px;
+
+  cursor: pointer;
+
+  transition: all var(--duration-swift);
+
+}
+
+.action-btn:hover {
+
+  background: var(--accent-terracotta);
+
+}
+
+.evidence-tag,
+
+.accession-tag {
+
+  background: var(--bg-surface-warm);
+
+  border: 1px solid var(--rule-crisp);
+
+  padding: 0.2rem 0.5rem;
+
+  border-radius: 2px;
+
+  font-weight: 600;
+
+  color: var(--accent-terracotta);
+
+}
+
+.gender-lens-btn {
+
+  background: #111111;
+
+  color: #ffffff;
+
+  border: none;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 3px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all var(--duration-swift);
+
+}
+
+.gender-lens-btn:hover {
+
+  background: var(--accent-terracotta);
+
+}
+
+.gender-lens-note {
+
+  font-size: 0.8125rem;
+
+  font-style: italic;
+
+  margin-top: 0.5rem;
+
+  color: var(--accent-terracotta);
+
+  line-height: 1.5;
+
+}
+
+/* 12. EDITORIAL FOOTER */
+
+.editorial-footer {
+
+  background: var(--bg-surface-warm);
+
+  border-top: 1px solid var(--rule-crisp);
+
+  padding: 3.5rem 0;
+
+  font-size: 0.875rem;
+
+  color: var(--ink-muted);
+
+}
+
+.footer-inner {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+}
+
+.footer-brand strong {
+
+  font-family: var(--font-display);
+
+  font-size: 1.25rem;
+
+  color: var(--ink-primary);
+
+  display: block;
+
+}
+
+/* 13. PRINT STYLESHEET (CLEAN ACADEMIC DOSSIER SUBMISSION) */
+
+@media print {
+
+  body {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    font-size: 11pt;
+
+    line-height: 1.6;
+
+  }
+
+  .masthead, .reading-progress-track, .quick-nav-pills, .masthead-actions,
+
+  .faith-lens-controller,
+
+  .sensory-sim-controller, .age-paradox-controller, .performativity-lens-controller,
+
+  .inspect-record-btn, .provenance-dialog, .prep-tabs {
+
+    display: none !important;
+
+  }
+
+  .container, .container-editorial {
+
+    max-width: 100% !important;
+
+    padding: 0 !important;
+
+  }
+
+  .chapter-stage {
+
+    page-break-before: always;
+
+    padding: 2cm 0;
+
+    border-bottom: none;
+
+  }
+
+  .evidence-gallery-dual, .monograph-prose-spread {
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1.5cm;
+
+  }
+
+  .evidence-frame, .thermal-receipt-paper, .cbsa-document-visual, .polaroid-frame-realistic {
+
+    box-shadow: none !important;
+
+    border: 1px solid #777777 !important;
+
+  }
+
+}
+

@@ -1,0 +1,19 @@
+# IDE & AI Assistant directories
+.agent/
+.agents/
+.claude/
+.codex/
+.cursor/
+.gemini/
+.grok/
+.impeccable/
+.opencode/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Scratch & Logs
+*.log
+scratch/
