@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scholar: 'LANGUAGE PRESERVATION & IMMIGRATION JOURNEYS',
       title: 'SES × Language: The 2-Year Separation and Resisting Language Stereotypes',
       lived: 'My dad immigrated to Canada first in 2016, leaving my mom all alone in Chennai until 2018, juggling school runs, teaching me, and managing the home. In Canada, we speak Telugu daily at home. Yet in Canadian society, they constantly assume all Indians speak Hindi or Punjabi, overlooking regional languages like Telugu and South Indian origins.',
-      systemic: 'Immigration processes often split families across borders, placing heavy emotional and caregiver burdens on mothers managing households alone. In Canada, society flattens diverse South Asian cultures into stereotypes, assuming everyone speaks Hindi or Punjabi, erasing distinct regional identities like the Telugu language.',
+      systemic: 'Immigration processes often split families across borders, placing heavy emotional ande burdens on mothers managing households alone. In Canada, society flattens diverse South Asian cultures into stereotypes, assuming everyone speaks Hindi or Punjabi, erasing distinct regional identities like the Telugu language.',
       defense: '"Speaking our own language at home keeps our culture alive instead of letting stereotypes define who we are."'
     },
     'ses-religion': {
@@ -244,8 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'ses-gender': {
       vector: 'PRACTICAL CHOICES VS. SHOWING OFF GENDER ROLES',
       scholar: 'PRACTICAL CHOICES OVER GENDER TRENDS',
-      title: 'SES × Gender: Hand-Me-Down Frugality vs. Masculine Consumerism',
-      lived: 'Wearing my older cousin\'s black-and-cream patterned frock at age 2-3 was born of practical domestic frugality: reusing children\'s clothing made economic sense. Today, I wear casual hoodies and ignore fashion trends. In a single-income family, choosing personal authenticity over expensive male fashion brands or masculine posturing is an economic and personal choice.',
+      title: 'SES × Gender: Hand-Me-Down Stuff vs. Masculine Ideology',
+      lived: 'Wearing my older cousin\'s black-and-cream patterned frock at age 2-3 was due to msotly saving money and it being funny: reusing children\'s clothing made economic sense. Today, I wear casual hoodies and ignore fashion trends. Choosing personal authenticity over expensive male fashion brands or masculine dressing is an economic and personal choice.',
       systemic: 'Society pressures teenage boys to buy expensive brand-name clothes to perform a tough, status-driven masculinity. Choosing comfortable hoodies and focusing on character rather than expensive trends rejects that financial pressure and allows authentic self-expression.',
       defense: '"You don\'t need expensive clothes or tough guy trends to feel confident in who you are."'
     },
@@ -253,15 +253,15 @@ document.addEventListener('DOMContentLoaded', () => {
       vector: 'FAMILY CLOSENESS & RESPECT',
       scholar: 'RESPECT, REASON & FAMILY CLOSENESS',
       title: 'Religion × Age: The Age 2 Ancestral Tonsure & Tirupati Pilgrimage to Near-Atheist Solidarity',
-      lived: 'At age 2, I had my head shaved at our family ancestral temple in India and at 15 I stood with my parents at Tirumala Tirupati temple in a traditional dhoti, yet as I grew older I adopted a philosophical stance as close as one can get to atheist without being one, culturally still Hindu while actively participating in rituals simply because my family do, and choosing love and family solidarity over theological conflict.',
-      systemic: 'Ageism often sees adolescent skepticism as a kind of disrespectful generational rebellion, yet choosing to participate in rituals out of love for parents demonstrates that one can practice cultural identity as a kind of mutual care, not dogma.',
+      lived: 'At age 2, I had my head shaved at our family ancestral temple in India and at 15 I stood with my parents at Tirumala Tirupati temple in a traditional dhoti, yet as I grew older I adopted a philosophical stance as close as one can get to atheist without being one, culturally still Hindu while actively participating in rituals simply because my family do, and choosing love and family solidarity over conflict.',
+      systemic: 'Ageism often sees adolescent skepticism as a kind of disrespectful generational rebellion, yet choosing to participate in rituals out of love for parents demonstrates that one can practice cultural identity as a kind of mutual care.',
       defense: '"Being mature doesn\'t mean fighting your parents over religion; it means supporting them because you love them."'
     },
     'religion-language': {
       vector: 'REGIONAL HERITAGE & LINGUISTIC DIVERSITY',
       scholar: 'SOUTH INDIAN HERITAGE & DIVERSE IDENTITIES',
       title: 'Religion × Language: South Indian Sacred Traditions vs. Language Stereotypes',
-      lived: 'My ancestral temple rituals and home traditions are rooted in Andhra Pradesh and Chennai, where our family speaks the Telugu language at home and I studied Tamil in school. In Canada, society routinely assumes all Indian faith and culture is expressed through the Hindi or Punjabi languages. Maintaining our traditions preserves the unique South Indian character of our heritage.',
+      lived: 'My ancestral temple rituals and home traditions are rooted in Andhra Pradesh and Chennai, where our family speaks the Telugu language at home and I studied Tamil and Hindi in school. In Canada, society routinely assumes all Indian faith and culture is expressed through the Hindi or Punjabi languages. Maintaining our traditions preserves the unique South Indian character of our heritage.',
       systemic: 'Dominant cultural narratives equate Hinduism with North Indian, Hindi-centric traditions. Honoring regional mother tongues like Telugu within religious practices resists having all our cultures lumped into one stereotype.',
       defense: '"Practicing our traditions in Telugu reminds us that South Asian culture is way bigger than just Hindi or Punjabi."'
     },
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
       vector: 'GENDER EXPECTATIONS & PRACTICAL FRUGALITY',
       scholar: 'AUTHENTIC CHARACTER OVER GENDER EXPECTATIONS',
       title: 'Gender × Age: Toddler Patterned Frock to Casual Hoodies and Authentic Character',
-      lived: 'At age 2-3, I wore my older female cousin\'s hand-me-down black-and-cream patterned collared frock with pocket ribbons purely for practical domestic frugality, yet relatives still tease me affectionately about it. Today, I dress in casual hoodies and focus on who I am rather than performing male stereotypes. My school and home environments have allowed me to be whatever I want without feeling pressured by gender expectations.',
+      lived: 'At age 2-3, I wore my older female cousin\'s hand-me-down black-and-cream patterned collared frock with pocket ribbons purely for practical saving money and since it was amusing, yet relatives still tease me affectionately about it. Today, I dress in casual hoodies and focus on who I am rather than performing male stereotypes. My school and home environments have allowed me to be whatever I want without feeling pressured by gender expectations.',
       systemic: 'As we discussed in our class units on Nurture (learned behaviour) and the Cycle of Oppression, gender stereotypes are taught by society as we grow older rather than being natural. Having supportive home and school environments allows young people to reject restrictive male stereotypes and live authentically.',
       defense: '"From a cousin\'s dress at age two to hoodies at seventeen, who you are matters more than fitting into gender boxes."'
     }
