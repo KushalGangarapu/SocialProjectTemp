@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scholar: "A MOTHER'S SACRIFICE & FAMILY STRENGTH",
       title: 'Language × Gender: The Solo Mother\'s Labor during 2016-2018',
       lived: 'My dad came to Canada in 2016, leaving my mom and me in Chennai until we joined him in 2018. During those two years of separation, my mother managed everything alone, teaching me, running errands, and guiding my early schooling. The Telugu language I speak today was nurtured through her maternal care and patience while figuring out life in transit.',
-      systemic: 'Care work and language socialization are disproportionately done by women in immigrant families. Understanding mothers as the primary people passing down our culture and language exposes the gendered division of domestic labor in migration.',
+      systemic: 'Care work and socialization are mostly done by women in immigrant families. Understanding mothers as the primary people passing down our culture and language exposes the gendered division of domestic labor in migration.',
       defense: '"My mother kept our language and family together during the two years my dad was in Canada."'
     },
     'ability-age': {
