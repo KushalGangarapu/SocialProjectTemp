@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
       date: 'Family Photo: Young vs. Now',
       title: 'Family Photo Young vs. Now & Parents Withholding Problems',
       text: 'Personal photograph of our family comparing young versus present-day appearances. When looking at this photograph, one can see the gradual growth process of me and, to a great extent, the whole family. Looking at young photos and then comparing them to the present makes one realize that growing up is a slow process. Although society considers a learner\'s permit and turning 16 as a sign of instant maturity, the actual process is slower as seen through the gradual changes in my body image.',
-      significance: 'Visually captures growth throughout the years and contrasts societal assumptions of instant maturity at 16 with gradual kitchen-table maturity at home.'
+      significance: 'Visually captures growth throughout the years and contrasts societal assumptions of instant maturity at 16 with gradual maturity at home.'
     },
     'gender-polaroid': {
       id: 'EVIDENCE 1',
