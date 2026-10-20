@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       date: 'Age 2 (Family Ancestral Temple)',
       title: 'Me Being Bald: Childhood Tonsure Photo (Ancestral Temple)',
       text: 'Personal photo taken at age 2 after having my head shaved at our family\'s ancestral temple in India. In Hindu tradition, this ceremony (Chūdakarana) represents cultural roots, family continuity, and blessings.',
-      significance: 'Connecting me to my religion through the traditional ceremonies and customs followed by my family.'
+      significance: 'Connecting me to my religion through the traditional ceremonies and customs followed by my family across generations.'
     },
     'rel-tonsure-rec': {
       id: 'EVIDENCE 2',
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'EVIDENCE 1',
       date: 'Elementary School (Chennai, Tamil Nadu)',
       title: 'Old Textbooks: Tamil Schooling & Learning Different Languages',
-      text: 'Photograph of my Standard 4 Tamil textbooks ("தமிழ்" and "தமிழ் இலக்கணம்" - Tamil literature and grammar) from my schooling in Chennai, Tamil Nadu. While my family has ancestral roots in Andhra Pradesh and speak Telugu at home, we lived in Chennai where I studied Tamil in school. These books represent the multilingual reality of my South Indian upbringing before moving to Canada.',
+      text: 'Photograph of my Standard 4 Tamil textbooks ("தமிழ்" and "தமிழ் இலக்கணம்", Tamil literature and grammar) from my schooling in Chennai, Tamil Nadu. While my family has ancestral roots in Andhra Pradesh and speaks Telugu at home, we lived in Chennai where I studied Tamil in school. These books represent the multilingual reality of my South Indian upbringing before moving to Canada.',
       significance: 'Preserving our native Telugu mother tongue daily at home while highlighting multilingual schooling in Chennai before immigrating to Canada.'
     },
     'lang-cbsa-rec': {
@@ -56,17 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'ability-chart-rec': {
       id: 'EVIDENCE 1',
-      date: 'Post-Operative Recovery (Age 3-4)',
-      title: 'Childhood Eye Surgery & Week of Temporary Blindness',
-      text: 'Photograph documenting recovery following squint surgery at age 3-4. In the photograph, I am sitting upright with dark protective wrap-around glasses on after undergoing eye surgery to correct my squint. The post-surgery period was not total blindness, but a week of severe vision blur and light sensitivity.',
-      significance: 'Tangible record of childhood vulnerability, temporary sensory impairment, and reliance on parents.'
+      date: 'POST-OP SQUINT SURGERY // AGE 3-4',
+      title: 'Evidence 1: Eye Surgery Recovery Photo',
+      text: 'Primary artifact documenting temporary physical impairment and sensory loss. Following strabismus surgery, visual acuity was severely compromised for about seven days, requiring dark environments and physical guidance to navigate basic domestic spaces.',
+      significance: 'Tangible record of childhood physical vulnerability, temporary sensory impairment, and the baseline reality of total reliance on caregivers.'
     },
     'ability-care-log': {
       id: 'EVIDENCE 2',
-      date: '1-Week Care Recovery',
-      title: 'Family Photo: Stress, Reliance, and Disability Realities',
-      text: 'A photograph of my family. Following the surgery, I was totally reliant on my family\'s help for at least a week. I was being fed by them, walked by holding their forearm, and generally lived in extreme confusion and sensory disability.',
-      significance: 'Translates childhood dependency into a mature understanding that ability is a spectrum, and that accommodations are essential human rights.'
+      date: 'FAMILY PHOTO // DUAL REALITY',
+      title: 'Evidence 2: Family Support & The Internal Burden',
+      text: 'Visual record of the family care network. It represents both the physical interdependence necessary to go through childhood medical recovery, and the socio-economic context of a single-income immigrant household where silent, self-imposed psychological pressures develop.',
+      significance: 'Clearly separates physical caregiving from the completely separate, internalized mental stress carried in a single-income household.'
     },
     'age-license-rec': {
       id: 'EVIDENCE 1',
@@ -218,19 +218,19 @@ document.addEventListener('DOMContentLoaded', () => {
       defense: '"Growing up isn\'t about buying expensive things; it\'s understanding what your parents gave up to support you."'
     },
     'ses-ability': {
-      vector: 'DOMESTIC CARE & FAMILY SUPPORT',
-      scholar: 'PHYSICAL VULNERABILITY & FAMILY CARE',
-      title: 'SES × Ability: The Domestic Reality of Post-Surgical Recovery',
-      lived: 'That week of extreme post-op blurriness after my squint surgery at age 3-4, I required constant support: being spoon-fed, guided by the forearm, and shielded from light. In a single-income household without hired domestic help, caregiving is completely absorbed physically through personal exhaustion and disruption of work.',
-      systemic: 'In our class Access and Equity units, we discussed how recovering from an illness or living with a disability needs a large amount of resources. In a single-income household without hired caregivers, my recovery cannot simply be outsourced; my parents had to bear all that physically taxing work themselves.',
-      defense: '"Anyone can get sick or hurt, but not every family has the money to take time off to take care of you."'
+      vector: 'PHYSICAL CARE & SEPARATE INTERNAL STRESS',
+      scholar: 'PHYSICAL CARE & INVISIBLE MENTAL BURDEN',
+      title: 'SES × Ability: Physical Caregiving vs. The Separate Mental Burden of a Single-Income Home',
+      lived: 'Recovering from my squint surgery at age 3 to 4 required intense physical care from my parents: being spoon-fed, guided by the forearm, and shielded from light. Yet the lasting stress I experienced was completely separate: the quiet, invisible mental burden of living in a single-income household, feeling guilty asking for anything, and self-censoring my needs to protect my parents.',
+      systemic: 'In our class Access and Equity units, we analyzed how ability includes both physical health and mental bandwidth. In a single-income immigrant family, parents absorb the physical toll of recovery without outside help, while children quietly internalize the economic stress, demonstrating that both physical and mental well-being are deeply tied to socioeconomic stability.',
+      defense: '"True care means understanding that physical recovery requires a helping hand, while mental well-being requires relieving invisible financial stress."'
     },
     'ses-language': {
       vector: 'FAMILY SEPARATION & LANGUAGE STEREOTYPES',
       scholar: 'LANGUAGE PRESERVATION & IMMIGRATION JOURNEYS',
       title: 'SES × Language: The 2-Year Separation and Resisting Language Stereotypes',
       lived: 'My dad immigrated to Canada first in 2016, leaving my mom all alone in Chennai until 2018, juggling school runs, teaching me, and managing the home. In Canada, we speak Telugu daily at home. Yet in Canadian society, they constantly assume all Indians speak Hindi or Punjabi, overlooking regional languages like Telugu and South Indian origins.',
-      systemic: 'Immigration processes often split families across borders, placing heavy emotional ande burdens on mothers managing households alone. In Canada, society flattens diverse South Asian cultures into stereotypes, assuming everyone speaks Hindi or Punjabi, erasing distinct regional identities like the Telugu language.',
+      systemic: 'Immigration processes often split families across borders, placing heavy emotional burdens on mothers managing households alone. In Canada, society flattens diverse South Asian cultures into stereotypes, assuming everyone speaks Hindi or Punjabi, erasing distinct regional identities like the Telugu language.',
       defense: '"Speaking our own language at home keeps our culture alive instead of letting stereotypes define who we are."'
     },
     'ses-religion': {
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
       vector: 'PRACTICAL CHOICES VS. SHOWING OFF GENDER ROLES',
       scholar: 'PRACTICAL CHOICES OVER GENDER TRENDS',
       title: 'SES × Gender: Hand-Me-Down Stuff vs. Masculine Ideology',
-      lived: 'Wearing my older cousin\'s black-and-cream patterned frock at age 2-3 was due to msotly saving money and it being funny: reusing children\'s clothing made economic sense. Today, I wear casual hoodies and ignore fashion trends. Choosing personal authenticity over expensive male fashion brands or masculine dressing is an economic and personal choice.',
+      lived: 'Wearing my older cousin\'s black-and-cream patterned frock at age 2-3 was due mostly to saving money and it being funny: reusing children\'s clothing made economic sense. Today, I wear casual hoodies and ignore fashion trends. Choosing personal authenticity over expensive male fashion brands or masculine dressing is an economic and personal choice.',
       systemic: 'Society pressures teenage boys to buy expensive brand-name clothes to perform a tough, status-driven masculinity. Choosing comfortable hoodies and focusing on character rather than expensive trends rejects that financial pressure and allows authentic self-expression.',
       defense: '"You don\'t need expensive clothes or tough guy trends to feel confident in who you are."'
     },
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
       vector: 'MUTUAL SUPPORT & PHYSICAL CARE',
       scholar: 'CARING FOR FAMILY & UNDERSTANDING VULNERABILITY',
       title: 'Religion × Ability: Bodily Rituals and Physical Vulnerability',
-      lived: 'Both my childhood tonsure ritual at age 2 and my squint surgery at age 3-4 involved physical vulnerability and completely relying on my parents for physical care. While religious tradition imbues bodily marks with sacredness, the experience of post-op blurriness taught me the material reality of human fragility and the necessity of interdependent care.',
+      lived: 'Both my childhood tonsure ritual at age 2 and my squint surgery at age 3 to 4 involved physical vulnerability and completely relying on my parents for physical care. While religious tradition connects bodily rituals with sacred blessings, the experience of post-op recovery taught me the reality of human interdependence and the necessity of care.',
       systemic: 'Ableism stigmatizes bodily dependence, while traditional community structures recognize the fragility of the body. Focusing on accessible environments and family care networks demonstrates that vulnerability is a universal condition connecting all humans.',
       defense: '"Needing help when your body is weak isn\'t a flaw; taking care of each other is what makes us human."'
     },
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
       vector: 'ACCESSIBILITY & COMFORT IN FAMILIAR LANGUAGE',
       scholar: 'COMFORT IN FAMILIAR LANGUAGE & ACCESSIBILITY',
       title: 'Language × Ability: Post-Op Disorientation and Communicative Reliance',
-      lived: 'When my squint surgery left me severely blurred, I could not read books or orient visually. In a state of disorientation, hearing my parents speak familiar Telugu was my primary anchor of safety and comfort. Familiar language is a lifeline when you temporarily cannot see.',
+      lived: 'When my squint surgery left me with severe optical blur, I could not read or orient visually. In that disoriented state, hearing my parents speak familiar Telugu was my primary anchor of safety and comfort. Familiar language is a lifeline when you temporarily cannot see.',
       systemic: 'Access to care requires communicative equity. When individuals experience physical impairment, language barriers make feeling isolated much worse, highlighting the importance of culturally and linguistically safe care.',
       defense: '"When surgery left me unable to see, hearing my parents speak Telugu was what made me feel safe."'
     },
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
       vector: 'HONEST VULNERABILITY VS. ACTING TOUGH',
       scholar: 'HONEST VULNERABILITY VS. STEREOTYPES',
       title: 'Ability × Gender: Recovering from Surgery vs. The Pressure to Never Show Weakness',
-      lived: 'During my squint surgery recovery, I experienced genuine fear, frustration, and complete physical reliance, being spoon-fed and guided by the arm. Traditional masculinity demands that boys never show weakness or crying. Having a supportive environment allowed me to process that vulnerability openly, unburdened by toxic masculine pressures.',
+      lived: 'During my squint surgery recovery, I experienced complete physical reliance: being spoon-fed and guided by the arm. Traditional masculinity demands that boys never show weakness or need assistance. Having a supportive environment allowed me to process that vulnerability openly, unburdened by toxic masculine pressures.',
       systemic: 'Society conditions boys to hide their pain and act tough, rejecting assistance, which severely impacts disabled and aging men. Embracing vulnerability as natural dismantles the myth of the invincible, emotionless male.',
       defense: '"Asking for help and admitting pain doesn\'t make you weak; it takes real courage."'
     },
