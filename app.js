@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lens === 'faith') {
           lensExplanation.innerHTML = `<strong>Family Tradition:</strong> Rituals like temple ceremonies are an important part of our culture, family history, and community support.`;
         } else {
-          lensExplanation.innerHTML = `<strong>Personal Skepticism:</strong> Close to atheist while culturally remaining Hindu. Participating in rituals out of love and solidarity for family beliefs rather than theological dogma.`;
+          lensExplanation.innerHTML = `<strong>Personal Skepticism:</strong> Close to atheist while culturally remaining Hindu. Participating in rituals is out of love for family rather than religious rules.`;
         }
       }
     });
